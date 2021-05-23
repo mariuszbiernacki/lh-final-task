@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "email": "mariano@op.pl",
+      "password": "$2a$10$G4uSKKy7FObvlMlUXFbblelAW1imFLf03lgzLj9llhQKv9fY/P3Xi",
+      "firstname": "Mariusz",
+      "id": 1
+    },
+    {
+      "email": "mariano2@op.pl",
+      "password": "$2a$10$nKyg5/tLfGQc1nNZvKyHBO93j9hf4GP6eFLKSK8eE6WXHkM63yCKS",
+      "firstname": "Mariusz",
+      "id": 2
+    },
+    {
+      "email": "mariano3@op.pl",
+      "password": "$2a$10$IHRdukg15O.qWMza6zTgWeG9U/Tb0XKR4gQoun/GoES2jPgkYEVba",
+      "firstname": "Mariusz",
+      "id": 3
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
