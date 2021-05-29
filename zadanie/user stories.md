@@ -5,15 +5,11 @@ System weryfikuje uzytkownik z email i hasło istnieje lub komunikat
 Jako zalogowany na ekranie użytkowników mogę przeglądać użytkowników
 Jako zalogowany na ekranie głownym mogę przeglądać moje zadania (wg userId) i najnowsze zadania (wg createdAt ) i najnowsze komentarze (createdAt)
 Jako zalogowany wybierając zadanie z (dowolnej) listy przechodzę na ekran szczegółów
-
-/// do skończenia filtrowanie
-
+dodawanie zadań
+Jako zalogowany na ekranie wszystkich zadań pole wyszukiwania jest focused
 Jako zalogowany na ekranie wszystkich zadań mogę filtrować zadania wg. title, status(new,inprogress,review,done), userId i sortować wg. userId lub createdAt
 
-///
-
-Jako zalogowany na ekranie wszystkich zadań pole wyszukiwania jest focused
-
+////
 Jako zalogowany na ekranie szczegółów zadania widzę komentarze (Comment - id, userId, content, createdAt) do zadania
 
 Jako zalogowany na ekranie szczegółów zadania mogę dodawać komentarze(Comment) do zadania

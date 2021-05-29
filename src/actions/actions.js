@@ -25,3 +25,11 @@ export const requestTask = (id) => ({
     id: id,
   },
 });
+
+export const addTask = (newTask, history) => ({
+  type: actionsTypes.TASK_ADD_REQUESTED,
+  payload: {
+    newTask: newTask,
+    history: history,
+  },
+});

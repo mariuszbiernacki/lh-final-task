@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { requestTasks } from "../../actions/actions";
 import { makeStyles } from "@material-ui/core/styles";
@@ -41,24 +41,30 @@ const Tasks = () => {
   const [order, setOrder] = useState("desc");
 
   const [status, setStatus] = useState("");
-  const [searchBy, setSearchBy] = useState("");
-
-  const handleChange = (e) => {
-    setStatus(e.target.value);
-  };
+  const [searchBy, setSearchBy] = useState("userId");
+  const [values, setValues] = useState({});
 
   const handleSearchChange = (e) => {
     setSearchBy(e.target.value);
   };
+  const searchInput = useRef(null);
+
+  useEffect(() => {
+    if (!searchInput.current) {
+      return;
+    }
+    searchInput.current.focus();
+  }, [searchBy, searchInput.current]);
 
   useEffect(() => {
     dispatch(
       requestTasks("tasks", {
         _sort: orderBy,
         _order: order,
+        ...values,
       })
     );
-  }, [orderBy, order]);
+  }, [orderBy, order, values]);
 
   const changeOrder = (newOrderBy) => {
     if (orderBy === newOrderBy) {
@@ -92,56 +98,68 @@ const Tasks = () => {
       <Formik
         initialValues={{ title: "", status: "", userId: "" }}
         onSubmit={(values, { setSubmitting }) => {
-          console.log(values);
+          // console.log(values);
+          setValues({
+            [searchBy]: values[searchBy],
+          });
+          setSubmitting(false);
         }}
       >
-        <Form>
-          {searchBy === "title" ? (
-            <TextField
-              label="title"
-              name="title"
-              type="title"
-              variant="outlined"
-            />
-          ) : searchBy === "status" ? (
-            <FormControl variant="outlined" className={classes.formControl}>
-              <InputLabel id="demo-simple-select-outlined-label">
-                Status
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-outlined-label"
-                id="demo-simple-select-outlined"
-                value={status}
+        {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
+          <Form onSubmit={handleSubmit}>
+            {searchBy === "title" ? (
+              <input
+                placeholder="title"
+                name="title"
+                type="text"
+                ref={searchInput}
                 onChange={handleChange}
-                label="Status"
-              >
-                <MenuItem value="">
-                  <em>Status: </em>
-                </MenuItem>
-                <MenuItem value={"new"}>New</MenuItem>
-                <MenuItem value={"inprogress"}>Inprogress</MenuItem>
-                <MenuItem value={"review"}>Review</MenuItem>
-                <MenuItem value={"done"}>Done</MenuItem>
-              </Select>
-            </FormControl>
-          ) : (
-            <TextField
-              label="userId"
-              name="userId"
-              type="userId"
-              variant="outlined"
-            />
-          )}
+                onBlur={handleBlur}
+                value={values.title}
+                required={true}
+              />
+            ) : searchBy === "status" ? (
+              <FormControl variant="outlined" className={classes.formControl}>
+                <select
+                  name="status"
+                  value={status}
+                  onChange={handleChange}
+                  ref={searchInput}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.status}
+                  required={true}
+                >
+                  <option value="">Status:</option>
+                  <option value={"new"}>New</option>
+                  <option value={"inprogress"}>Inprogress</option>
+                  <option value={"review"}>Review</option>
+                  <option value={"done"}>Done</option>
+                </select>
+              </FormControl>
+            ) : (
+              <input
+                placeholder="userId"
+                name="userId"
+                type="text"
+                ref={searchInput}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.userId}
+                required={true}
+              />
+            )}
 
-          <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            // disabled={isSubmitting}
-          >
-            search
-          </Button>
-        </Form>
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              disabled={isSubmitting}
+            >
+              search
+            </Button>
+          </Form>
+        )}
       </Formik>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
@@ -186,7 +204,9 @@ const Tasks = () => {
                   </TableCell>
                   <TableCell align="right">{status}</TableCell>
                   <TableCell align="right">{title}</TableCell>
-                  <TableCell align="right">{userId}</TableCell>
+                  <TableCell align="right">
+                    {userId ? userId : "no user selected"}
+                  </TableCell>
                   <TableCell align="right">
                     <Moment unix format="LL, LT">
                       {createdAt}

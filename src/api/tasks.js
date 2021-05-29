@@ -7,6 +7,9 @@ const apiTasks = {
   get(id) {
     return api.get(`/tasks/${id}`);
   },
+  add(newTask) {
+    return api.post(`/tasks`, newTask);
+  },
 };
 
 export default apiTasks;
