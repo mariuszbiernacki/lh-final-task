@@ -16,6 +16,11 @@ const tasksReducer = (state = initialState, action) => {
         ...state,
         [payload.target]: payload.tasks,
       };
+    case actionsTypes.TASK_FETCH_SUCCEEDED:
+      return {
+        ...state,
+        selectedTask: payload,
+      };
     default:
       return state;
   }

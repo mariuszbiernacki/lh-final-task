@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, put, takeEvery } from "redux-saga/effects";
 import { actionsTypes } from "../actions/actionsTypes";
 import apiUsers from "../api/users";
 
@@ -20,7 +20,7 @@ function* fetchUsers() {
 }
 
 function* usersSaga() {
-  yield takeLatest(actionsTypes.USERS_FETCH_REQUESTED, fetchUsers);
+  yield takeEvery(actionsTypes.USERS_FETCH_REQUESTED, fetchUsers);
 }
 
 export default usersSaga;

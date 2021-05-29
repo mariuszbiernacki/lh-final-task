@@ -1,10 +1,12 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, put, takeEvery } from "redux-saga/effects";
 import { actionsTypes } from "../actions/actionsTypes";
 import apiComments from "../api/comments";
 
-function* fetchComments() {
+function* fetchComments(action) {
+  const { payload } = action;
+  const { params } = payload;
   try {
-    const response = yield call(apiComments.getAll);
+    const response = yield call(apiComments.getAll, params);
     const comments = response.data;
 
     yield put({
@@ -20,7 +22,7 @@ function* fetchComments() {
 }
 
 function* commentsSaga() {
-  yield takeLatest(actionsTypes.COMMENTS_FETCH_REQUESTED, fetchComments);
+  yield takeEvery(actionsTypes.COMMENTS_FETCH_REQUESTED, fetchComments);
 }
 
 export default commentsSaga;

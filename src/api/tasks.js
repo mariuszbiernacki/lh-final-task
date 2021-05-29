@@ -1,8 +1,8 @@
 import api from "./index";
 
 const apiTasks = {
-  getAll() {
-    return api.get("/tasks");
+  getAll(params) {
+    return api.get("/tasks", { params });
   },
   get(id) {
     return api.get(`/tasks/${id}`);

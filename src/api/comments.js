@@ -1,8 +1,8 @@
 import api from "./index";
 
 const apiComments = {
-  getAll() {
-    return api.get("/comments");
+  getAll(params) {
+    return api.get("/comments", { params });
   },
   get(id) {
     return api.get(`/comments/${id}`);
