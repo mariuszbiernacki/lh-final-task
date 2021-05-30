@@ -7,6 +7,9 @@ const apiComments = {
   get(id) {
     return api.get(`/comments/${id}`);
   },
+  add(newComment) {
+    return api.post(`/comments`, newComment);
+  },
 };
 
 export default apiComments;

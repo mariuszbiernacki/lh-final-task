@@ -11,15 +11,9 @@ import { addTask } from "../../actions/actions";
 import { useHistory } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
-  table: {
-    maxWidth: 960,
-  },
   formControl: {
     margin: theme.spacing(1),
     minWidth: 120,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
   },
 }));
 
@@ -52,7 +46,6 @@ const AddTask = () => {
       validationSchema={AddTaskSchema}
       onSubmit={(values, { setSubmitting }) => {
         dispatch(addTask(values, history));
-        console.log(values);
         setSubmitting(false);
       }}
     >

@@ -1,6 +1,7 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router";
 import Navbar from "../components/user/Navbar";
+import AddCommentPage from "../pages/user/AddCommentPage";
 import AddTaskPage from "../pages/user/AddTaskPage";
 import HomePage from "../pages/user/HomePage";
 import TaskDetailsPage from "../pages/user/TaskDetailsPage";
@@ -17,6 +18,11 @@ const UserRouter = () => {
         <Route exact path="/tasks/:id" component={TaskDetailsPage} />
         <Route exact path="/tasks" component={TasksPage} />
         <Route exact path="/users" component={UsersPage} />
+        <Route
+          exact
+          path="/tasks/:id/comments/add"
+          component={AddCommentPage}
+        />
         <Redirect from="*" to="/" />
       </Switch>
     </>

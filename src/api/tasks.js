@@ -5,7 +5,7 @@ const apiTasks = {
     return api.get("/tasks", { params });
   },
   get(id) {
-    return api.get(`/tasks/${id}`);
+    return api.get(`/tasks/${id}?_embed=comments`);
   },
   add(newTask) {
     return api.post(`/tasks`, newTask);

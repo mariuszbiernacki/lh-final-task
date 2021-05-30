@@ -4,8 +4,9 @@ import createSagaMiddleware from "redux-saga";
 import commentsReducer from "../reducers/commentsReducer";
 import tasksReducer from "../reducers/tasksReducer";
 import usersReducer from "../reducers/usersReducer";
-
-import rootSaga from "../sagas/saga";
+import commentsSaga from "../sagas/commentsSaga";
+import tasksSaga from "../sagas/tasksSaga";
+import usersSaga from "../sagas/usersSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -18,6 +19,8 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(sagaMiddleware))
 );
 
-sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(tasksSaga);
+sagaMiddleware.run(usersSaga);
+sagaMiddleware.run(commentsSaga);
 
 export default store;

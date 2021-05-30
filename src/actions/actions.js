@@ -33,3 +33,11 @@ export const addTask = (newTask, history) => ({
     history: history,
   },
 });
+
+export const addComment = (newComment, history) => ({
+  type: actionsTypes.COMMENT_ADD_REQUESTED,
+  payload: {
+    newComment: newComment,
+    history: history,
+  },
+});

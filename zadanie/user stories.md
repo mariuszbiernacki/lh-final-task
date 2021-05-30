@@ -8,9 +8,8 @@ Jako zalogowany wybierając zadanie z (dowolnej) listy przechodzę na ekran szcz
 dodawanie zadań
 Jako zalogowany na ekranie wszystkich zadań pole wyszukiwania jest focused
 Jako zalogowany na ekranie wszystkich zadań mogę filtrować zadania wg. title, status(new,inprogress,review,done), userId i sortować wg. userId lub createdAt
-
-////
 Jako zalogowany na ekranie szczegółów zadania widzę komentarze (Comment - id, userId, content, createdAt) do zadania
+////
 
 Jako zalogowany na ekranie szczegółów zadania mogę dodawać komentarze(Comment) do zadania
 

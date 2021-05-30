@@ -13,7 +13,7 @@ function* addTask(action) {
 
     push("/tasks/" + addedTask.id);
   } catch (e) {
-    //
+    // error to be add
   }
 }
 
@@ -60,11 +60,9 @@ function* fetchTask(action) {
 }
 
 function* tasksSaga() {
-  yield all([
-    takeEvery(actionsTypes.TASK_ADD_REQUESTED, addTask),
-    takeEvery(actionsTypes.TASKS_FETCH_REQUESTED, fetchTasks),
-    takeEvery(actionsTypes.TASK_FETCH_REQUESTED, fetchTask),
-  ]);
+  yield takeEvery(actionsTypes.TASK_ADD_REQUESTED, addTask);
+  yield takeEvery(actionsTypes.TASKS_FETCH_REQUESTED, fetchTasks);
+  yield takeEvery(actionsTypes.TASK_FETCH_REQUESTED, fetchTask);
 }
 
 export default tasksSaga;
