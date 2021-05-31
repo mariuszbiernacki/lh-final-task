@@ -19,6 +19,9 @@ const Navbar = () => {
         <Link to="/users">Users</Link>
       </li>
       <li>
+        <Link to="/sprints">Sprints</Link>
+      </li>
+      <li>
         <Button
           type="button"
           variant="contained"

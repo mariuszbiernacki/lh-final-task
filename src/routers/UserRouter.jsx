@@ -5,6 +5,7 @@ import AddCommentPage from "../pages/user/AddCommentPage";
 import AddTaskPage from "../pages/user/AddTaskPage";
 import EditTaskPage from "../pages/user/EditTaskPage";
 import HomePage from "../pages/user/HomePage";
+import SprintsPage from "../pages/user/SprintsPage";
 import TaskDetailsPage from "../pages/user/TaskDetailsPage";
 import TasksPage from "../pages/user/TasksPage";
 import UsersPage from "../pages/user/UsersPage";
@@ -25,6 +26,7 @@ const UserRouter = () => {
           component={AddCommentPage}
         />
         <Route exact path="/tasks/:id/edit" component={EditTaskPage} />
+        <Route exact path="/sprints" component={SprintsPage} />
         <Redirect from="*" to="/" />
       </Switch>
     </>

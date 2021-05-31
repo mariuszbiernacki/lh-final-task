@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, TextField } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import { Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
@@ -40,7 +40,6 @@ const AddComment = ({ taskId }) => {
       validationSchema={AddCommentSchema}
       onSubmit={(values, { setSubmitting }) => {
         dispatch(addComment(values, history));
-        console.log("done");
         setSubmitting(false);
       }}
     >

@@ -49,3 +49,10 @@ export const updateTask = (taskId, taskChanges) => ({
     taskChanges: taskChanges,
   },
 });
+
+export const requestSprints = (params) => ({
+  type: actionsTypes.SPRINTS_FETCH_REQUESTED,
+  payload: {
+    params: params,
+  },
+});

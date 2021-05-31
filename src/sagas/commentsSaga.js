@@ -20,7 +20,10 @@ function* addComment(action) {
 
     push("/tasks/" + addedComment.taskId);
   } catch (e) {
-    // error to be add
+    yield put({
+      type: actionsTypes.COMMENTS_FETCH_FAILED,
+      message: e.message,
+    });
   }
 }
 

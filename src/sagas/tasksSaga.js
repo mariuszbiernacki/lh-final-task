@@ -21,7 +21,10 @@ function* updateTask(action) {
       payload: updatedTask,
     });
   } catch (e) {
-    // error to be add
+    yield put({
+      type: actionsTypes.TASK_FETCH_FAILED,
+      message: e.message,
+    });
   }
 }
 

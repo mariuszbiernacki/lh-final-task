@@ -58,10 +58,6 @@ const Home = () => {
     );
   }, []);
 
-  console.log(myTasks);
-  console.log(newTasks);
-  console.log(comments);
-
   return (
     <div>
       <Grid container spacing={2}>
