@@ -9,13 +9,11 @@ dodawanie zadań
 Jako zalogowany na ekranie wszystkich zadań pole wyszukiwania jest focused
 Jako zalogowany na ekranie wszystkich zadań mogę filtrować zadania wg. title, status(new,inprogress,review,done), userId i sortować wg. userId lub createdAt
 Jako zalogowany na ekranie szczegółów zadania widzę komentarze (Comment - id, userId, content, createdAt) do zadania
-////
-
 Jako zalogowany na ekranie szczegółów zadania mogę dodawać komentarze(Comment) do zadania
-
 Jako zalogowany na ekranie szczegółów zadania widzę historię zmian w zadaniu (zmiana danych, uzytkownika, dodano komentarz)
-
 Jako zalogowany korzystając z menu rozwijanego mogę przekazać wybrane zadanie innemu użytkownikowi (zmiana historii!)
+
+////
 
 ??
 

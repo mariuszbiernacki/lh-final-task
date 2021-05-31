@@ -3,6 +3,7 @@ import { Redirect, Route, Switch } from "react-router";
 import Navbar from "../components/user/Navbar";
 import AddCommentPage from "../pages/user/AddCommentPage";
 import AddTaskPage from "../pages/user/AddTaskPage";
+import EditTaskPage from "../pages/user/EditTaskPage";
 import HomePage from "../pages/user/HomePage";
 import TaskDetailsPage from "../pages/user/TaskDetailsPage";
 import TasksPage from "../pages/user/TasksPage";
@@ -23,6 +24,7 @@ const UserRouter = () => {
           path="/tasks/:id/comments/add"
           component={AddCommentPage}
         />
+        <Route exact path="/tasks/:id/edit" component={EditTaskPage} />
         <Redirect from="*" to="/" />
       </Switch>
     </>

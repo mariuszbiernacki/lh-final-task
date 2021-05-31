@@ -1,6 +1,7 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 import { actionsTypes } from "../actions/actionsTypes";
 import apiComments from "../api/comments";
+import apiTaskChanges from "../api/task_changes";
 
 function* addComment(action) {
   const { payload } = action;
@@ -10,6 +11,12 @@ function* addComment(action) {
   try {
     const response = yield call(apiComments.add, newComment);
     const addedComment = response.data;
+
+    yield call(apiTaskChanges.add, {
+      taskId: newComment.taskId,
+      type: "comment_added",
+      createdAt: parseInt(new Date().getTime() / 1000),
+    });
 
     push("/tasks/" + addedComment.taskId);
   } catch (e) {

@@ -9,10 +9,15 @@ const TaskDetailsPage = () => {
 
   return (
     <>
-      <TaskDetails id={id} />;
+      <TaskDetails id={id} />
       <Link to={`/tasks/${id}/comments/add`}>
         <Button type="button" variant="contained" color="primary">
           add comment
+        </Button>
+      </Link>
+      <Link to={`/tasks/${id}/edit`}>
+        <Button type="button" variant="contained" color="primary">
+          edit task
         </Button>
       </Link>
     </>

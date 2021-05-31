@@ -41,3 +41,11 @@ export const addComment = (newComment, history) => ({
     history: history,
   },
 });
+
+export const updateTask = (taskId, taskChanges) => ({
+  type: actionsTypes.TASK_UPDATE_REQUESTED,
+  payload: {
+    taskId: taskId,
+    taskChanges: taskChanges,
+  },
+});
