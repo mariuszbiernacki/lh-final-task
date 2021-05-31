@@ -1,20 +1,16 @@
-import { List, ListItem, ListItemText } from "@material-ui/core";
-import React, { useEffect } from "react";
+import React from "react";
 import Moment from "react-moment";
-import { useSelector, useDispatch } from "react-redux";
-import { requestTask } from "../../actions/actions.js";
 import DisplayTaskChanges from "./DisplayTaskChanges.jsx";
+import { List, ListItem, ListItemText } from "@material-ui/core";
+import { useTask } from "../../helpers/customHooks.js";
 
 const TaskDetails = ({ id }) => {
-  const selectedTask = useSelector((state) => state.tasks.selectedTask);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(requestTask(id));
-  }, [id]);
-  console.log("selectedTask", selectedTask);
+  const selectedTask = useTask(id);
+
   if (!selectedTask) {
     return null;
   }
+
   const { title, userId, status, createdAt, comments, task_changes } =
     selectedTask;
 

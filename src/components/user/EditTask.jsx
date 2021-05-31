@@ -8,10 +8,11 @@ import {
 import { Form, Formik } from "formik";
 import { makeStyles } from "@material-ui/core/styles";
 import React, { useEffect, useState } from "react";
-import { requestTask, updateTask } from "../../actions/actions";
+import { updateTask } from "../../actions/actions";
 import * as Yup from "yup";
 import apiUsers from "../../api/users";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useTask } from "../../helpers/customHooks";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -28,7 +29,7 @@ const EditTask = ({ taskId }) => {
   const dispatch = useDispatch();
   const [users, setUsers] = useState([]);
   const classes = useStyles();
-  const selectedTask = useSelector((state) => state.tasks.selectedTask);
+  const selectedTask = useTask(taskId);
 
   useEffect(() => {
     apiUsers.getAll().then((response) => {
@@ -36,10 +37,6 @@ const EditTask = ({ taskId }) => {
       setUsers(data);
     });
   }, []);
-
-  useEffect(() => {
-    dispatch(requestTask(taskId));
-  }, [taskId]);
 
   if (!selectedTask) {
     return null;
