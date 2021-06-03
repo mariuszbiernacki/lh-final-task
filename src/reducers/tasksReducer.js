@@ -4,6 +4,7 @@ const initialState = {
   tasks: [],
   myTasks: [],
   newTasks: [],
+  sprintlessTasks: [],
   selectedTask: null,
 };
 

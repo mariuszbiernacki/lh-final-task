@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { requestTask } from "../actions/actions";
+import { requestSprint, requestTask } from "../actions/actions";
 
 export const useTask = (taskId) => {
   const dispatch = useDispatch();
@@ -11,4 +11,15 @@ export const useTask = (taskId) => {
   }, [taskId]);
 
   return selectedTask;
+};
+
+export const useSprint = (sprintId) => {
+  const dispatch = useDispatch();
+  const selectedSprint = useSelector((state) => state.sprints.selectedSprint);
+
+  useEffect(() => {
+    dispatch(requestSprint(sprintId));
+  }, [sprintId]);
+
+  return selectedSprint;
 };

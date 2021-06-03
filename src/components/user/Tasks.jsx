@@ -180,6 +180,7 @@ const Tasks = () => {
                   User Id
                 </TableSortLabel>
               </TableCell>
+              <TableCell align="right">Sprint Id</TableCell>
               <TableCell
                 align="right"
                 sortDirection={orderBy === "createdAt" ? order : false}
@@ -196,7 +197,7 @@ const Tasks = () => {
           </TableHead>
           <TableBody>
             {tasks.map((task) => {
-              const { createdAt, id, status, title, userId } = task;
+              const { createdAt, id, status, title, userId, sprintId } = task;
               return (
                 <TableRow key={id}>
                   <TableCell component="th" scope="row">
@@ -206,6 +207,9 @@ const Tasks = () => {
                   <TableCell align="right">{title}</TableCell>
                   <TableCell align="right">
                     {userId ? userId : "no user selected"}
+                  </TableCell>
+                  <TableCell align="right">
+                    {sprintId ? sprintId : "no sprint selected"}
                   </TableCell>
                   <TableCell align="right">
                     <Moment unix format="LL, LT">

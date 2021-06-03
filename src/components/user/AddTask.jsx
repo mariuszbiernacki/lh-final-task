@@ -17,8 +17,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// userId createdAt id	status	title
-
 const AddTaskSchema = Yup.object().shape({
   title: Yup.string().required("no title provided"),
   status: Yup.string().required("status shoud be set"),

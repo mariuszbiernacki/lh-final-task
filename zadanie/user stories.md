@@ -12,17 +12,12 @@ Jako zalogowany na ekranie szczegółów zadania widzę komentarze (Comment - id
 Jako zalogowany na ekranie szczegółów zadania mogę dodawać komentarze(Comment) do zadania
 Jako zalogowany na ekranie szczegółów zadania widzę historię zmian w zadaniu (zmiana danych, uzytkownika, dodano komentarz)
 Jako zalogowany korzystając z menu rozwijanego mogę przekazać wybrane zadanie innemu użytkownikowi (zmiana historii!)
+Jako zalogowany na widoku sprints moge dodać sprint
+Jako zalogowany na widoku sprints moge wyswietlic sprint i liste zadan
+Jako zalogowany na widoku sprints moge dodać zadanie do sprintu, lub je usunac do backloga
 
 ////
 
-??
-
 Jako zalogowany na widoku kanban widze zadania w kolumnach wg. statusu (przeciąganie zadań niewymagane)
-
-Jako zalogowany na widoku sprints moge dodać sprint
-
-Jako zalogowany na widoku sprints moge wyswietlic sprint i liste zadan
-
-Jako zalogowany na widoku sprints moge dodać zadanie do sprintu, lub je usunac do backloga
 
 Do 6.6 MVP.

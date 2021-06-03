@@ -56,3 +56,18 @@ export const requestSprints = (params) => ({
     params: params,
   },
 });
+
+export const addSprint = (newSprint, history) => ({
+  type: actionsTypes.SPRINT_ADD_REQUESTED,
+  payload: {
+    newSprint: newSprint,
+    history: history,
+  },
+});
+
+export const requestSprint = (id) => ({
+  type: actionsTypes.SPRINT_FETCH_REQUESTED,
+  payload: {
+    id: id,
+  },
+});

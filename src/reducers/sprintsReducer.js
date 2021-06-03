@@ -2,6 +2,7 @@ import { actionsTypes } from "../actions/actionsTypes";
 
 const initialState = {
   sprints: [],
+  selectedSprint: null,
 };
 
 const sprintsReducer = (state = initialState, action) => {
@@ -12,6 +13,11 @@ const sprintsReducer = (state = initialState, action) => {
       return {
         ...state,
         sprints: payload,
+      };
+    case actionsTypes.SPRINT_FETCH_SUCCEEDED:
+      return {
+        ...state,
+        selectedSprint: payload,
       };
     default:
       return state;

@@ -85,6 +85,11 @@ class Sprints extends Component {
               })}
           </TableBody>
         </Table>
+        <Link to={"/sprints/add"}>
+          <Button type="button" variant="contained" color="primary">
+            Add Sprint
+          </Button>
+        </Link>
       </TableContainer>
     );
   }
