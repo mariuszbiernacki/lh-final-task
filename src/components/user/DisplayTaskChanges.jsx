@@ -1,34 +1,34 @@
-import { List, ListItem, ListItemText } from "@material-ui/core";
-import React from "react";
+import React, { useEffect } from "react";
 import Moment from "react-moment";
 
 const DisplayTaskChanges = ({ changes }) => {
-  if (!changes) {
-    return null;
-  }
+  useEffect(() => {
+    console.log("changes", changes);
+  }, []);
+
   return (
-    <List>
-      {changes.map((change) => {
-        const { id, type, createdAt } = change;
-        return (
-          <ListItem key={id}>
-            <ListItemText
-              primary={type}
-              secondary={
-                <>
-                  <span>
-                    created:{" "}
-                    <Moment unix format="LL, LT">
-                      {createdAt}
-                    </Moment>
-                  </span>
-                </>
-              }
-            />
-          </ListItem>
-        );
-      })}
-    </List>
+    <div>
+      {changes.length === 0 ? (
+        <h2 data-testid="no_changes">no changes</h2>
+      ) : (
+        <ul data-testid="changes_list">
+          {changes.map((change) => {
+            const { id, type, createdAt } = change;
+
+            return (
+              <li key={id}>
+                <h3>{type}</h3>
+                <span>created:</span>
+                <br />
+                <Moment unix format="LL, LT">
+                  {createdAt}
+                </Moment>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
   );
 };
 

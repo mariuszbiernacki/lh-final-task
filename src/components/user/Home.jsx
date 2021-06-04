@@ -60,7 +60,7 @@ const Home = () => {
 
   return (
     <div>
-      <Grid container spacing={2}>
+      <Grid container>
         <Grid item xs={12} md={4}>
           <Typography variant="h6" className={classes.title}>
             My Tasks List

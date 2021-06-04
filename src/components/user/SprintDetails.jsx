@@ -54,7 +54,7 @@ const SprintDetails = ({ id }) => {
         </p>
       </div>
 
-      <Grid container spacing={2}>
+      <Grid container>
         <Grid item xs={12} md={4}>
           <h2>Sprint Tasks: </h2>
           <List>
