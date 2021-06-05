@@ -10,8 +10,8 @@ function* addSprint(action) {
   try {
     yield call(apiSprints.add, newSprint);
     push("/sprints/");
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.log(error);
   }
 }
 
@@ -26,10 +26,10 @@ function* fetchSprints(action) {
       type: actionsTypes.SPRINTS_FETCH_SUCCEEDED,
       payload: sprints,
     });
-  } catch (e) {
+  } catch (error) {
     yield put({
       type: actionsTypes.SPRINTS_FETCH_FAILED,
-      message: e.message,
+      payload: error,
     });
   }
 }
@@ -45,10 +45,10 @@ function* fetchSprint(action) {
       type: actionsTypes.SPRINT_FETCH_SUCCEEDED,
       payload: sprint,
     });
-  } catch (e) {
+  } catch (error) {
     yield put({
       type: actionsTypes.SPRINT_FETCH_FAILED,
-      message: e.message,
+      payload: error,
     });
   }
 }

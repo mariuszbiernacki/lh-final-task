@@ -19,10 +19,10 @@ function* addComment(action) {
     });
 
     push("/tasks/" + addedComment.taskId);
-  } catch (e) {
+  } catch (error) {
     yield put({
       type: actionsTypes.COMMENTS_FETCH_FAILED,
-      message: e.message,
+      payload: error,
     });
   }
 }
@@ -38,10 +38,10 @@ function* fetchComments(action) {
       type: actionsTypes.COMMENTS_FETCH_SUCCEEDED,
       payload: comments,
     });
-  } catch (e) {
+  } catch (error) {
     yield put({
       type: actionsTypes.COMMENTS_FETCH_FAILED,
-      message: e.message,
+      payload: error,
     });
   }
 }

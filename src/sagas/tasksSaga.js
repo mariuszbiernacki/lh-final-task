@@ -33,10 +33,10 @@ function* updateTask(action) {
       const sprint = yield select((state) => state.sprints.selectedSprint);
       yield put(requestSprint(sprint.id));
     }
-  } catch (e) {
+  } catch (error) {
     yield put({
       type: actionsTypes.TASK_FETCH_FAILED,
-      message: e.message,
+      payload: error,
     });
   }
 }
@@ -51,8 +51,8 @@ function* addTask(action) {
     const addedTask = response.data;
 
     push("/tasks/" + addedTask.id);
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.log(error);
   }
 }
 
@@ -71,10 +71,10 @@ function* fetchTasks(action) {
         tasks: tasks,
       },
     });
-  } catch (e) {
+  } catch (error) {
     yield put({
       type: actionsTypes.TASKS_FETCH_FAILED,
-      message: e.message,
+      payload: error,
     });
   }
 }
@@ -90,10 +90,10 @@ function* fetchTask(action) {
       type: actionsTypes.TASK_FETCH_SUCCEEDED,
       payload: task,
     });
-  } catch (e) {
+  } catch (error) {
     yield put({
       type: actionsTypes.TASK_FETCH_FAILED,
-      message: e.message,
+      payload: error,
     });
   }
 }

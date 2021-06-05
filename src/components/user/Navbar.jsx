@@ -31,7 +31,7 @@ const Navbar = () => {
         <AppBar position="static">
           <Toolbar className="navbar">
             <Typography variant="h6" className={classes.title}>
-              Lufthansa
+              LH Final Task
             </Typography>
             <Link className="navbar__item" to="/">
               <Button type="button" color="inherit">

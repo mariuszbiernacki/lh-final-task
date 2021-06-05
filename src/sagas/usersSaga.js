@@ -11,10 +11,10 @@ function* fetchUsers() {
       type: actionsTypes.USERS_FETCH_SUCCEEDED,
       payload: users,
     });
-  } catch (e) {
+  } catch (error) {
     yield put({
       type: actionsTypes.USERS_FETCH_FAILED,
-      message: e.message,
+      payload: error,
     });
   }
 }
