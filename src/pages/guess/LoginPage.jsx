@@ -1,11 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import LoginForm from "../../components/guess/LoginForm";
+import { Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   return (
     <>
-      <Link to="/register">Register</Link>
+      <Link to="/register">
+        <Button type="submit" variant="contained" color="secondary">
+          Register
+        </Button>
+      </Link>
       <LoginForm />
     </>
   );

@@ -17,6 +17,12 @@
       "password": "$2a$10$IHRdukg15O.qWMza6zTgWeG9U/Tb0XKR4gQoun/GoES2jPgkYEVba",
       "firstname": "Mariusz",
       "id": 3
+    },
+    {
+      "email": "michas@wp.pl",
+      "password": "$2a$10$Cl86O6asnnv6gijw/UYnpeaEFi3YdBpCaqVdl8infb3o3Ap3gDZ92",
+      "firstname": "Michał",
+      "id": 4
     }
   ],
   "tasks": [

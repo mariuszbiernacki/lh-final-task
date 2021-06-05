@@ -56,6 +56,11 @@ const Navbar = () => {
                 Sprints
               </Button>
             </Link>
+            <Link className="navbar__item" to="/kanban">
+              <Button type="button" color="inherit">
+                Kanban
+              </Button>
+            </Link>
 
             <Button
               type="button"

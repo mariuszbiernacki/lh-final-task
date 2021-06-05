@@ -4,6 +4,9 @@ const initialState = {
   tasks: [],
   myTasks: [],
   newTasks: [],
+  inprogressTasks: [],
+  reviewTasks: [],
+  doneTasks: [],
   sprintlessTasks: [],
   selectedTask: null,
 };

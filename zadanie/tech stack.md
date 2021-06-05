@@ -6,4 +6,3 @@ memoization - useCallback, useMemo, memo, PureComponent
 min 1 custom Hook
 min 1 class component
 min 1 test
-//

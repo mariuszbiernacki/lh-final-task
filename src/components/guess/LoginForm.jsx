@@ -5,7 +5,6 @@ import { Button } from "@material-ui/core";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import authApi from "../../api/auth";
-import { useHistory } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
   root: {

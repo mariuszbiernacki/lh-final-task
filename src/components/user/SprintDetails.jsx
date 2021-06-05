@@ -70,6 +70,7 @@ const SprintDetails = ({ id }) => {
                           <span>status: {status}</span>
                           <br />
                           <span>userId: {userId}</span>
+                          <br />
                           <Button
                             color="secondary"
                             variant="contained"

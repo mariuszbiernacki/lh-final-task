@@ -6,6 +6,7 @@ import AddSprintPage from "../pages/user/AddSprintPage";
 import AddTaskPage from "../pages/user/AddTaskPage";
 import EditTaskPage from "../pages/user/EditTaskPage";
 import HomePage from "../pages/user/HomePage";
+import KanbanPage from "../pages/user/KanbanPage";
 import SprintDetailsPage from "../pages/user/SprintDetailsPage";
 import SprintsPage from "../pages/user/SprintsPage";
 import TaskDetailsPage from "../pages/user/TaskDetailsPage";
@@ -31,6 +32,7 @@ const UserRouter = () => {
         <Route exact path="/sprints" component={SprintsPage} />
         <Route exact path="/sprints/add" component={AddSprintPage} />
         <Route exact path="/sprints/:id" component={SprintDetailsPage} />
+        <Route exact path="/kanban" component={KanbanPage} />
         <Redirect from="*" to="/" />
       </Switch>
     </>

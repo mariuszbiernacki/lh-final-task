@@ -15,9 +15,6 @@ Jako zalogowany korzystając z menu rozwijanego mogę przekazać wybrane zadanie
 Jako zalogowany na widoku sprints moge dodać sprint
 Jako zalogowany na widoku sprints moge wyswietlic sprint i liste zadan
 Jako zalogowany na widoku sprints moge dodać zadanie do sprintu, lub je usunac do backloga
-
-////
-
 Jako zalogowany na widoku kanban widze zadania w kolumnach wg. statusu (przeciąganie zadań niewymagane)
 
 Do 6.6 MVP.
